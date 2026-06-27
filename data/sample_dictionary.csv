@@ -1,0 +1,207 @@
+sanskrit,english,pos
+rama,"pleasing; the god Rama",noun
+dharma,"duty, righteousness, law",noun
+karma,"action, deed",noun
+yoga,"union, discipline",noun
+guru,"teacher, heavy",noun
+deva,"god, deity",noun
+devi,"goddess",noun
+agni,"fire",noun
+jala,"water",noun
+vayu,"wind, air",noun
+prithvi,"earth",noun
+akasha,"sky, ether",noun
+surya,"sun",noun
+chandra,"moon",noun
+nakshatra,"star, constellation",noun
+parvata,"mountain",noun
+nadi,"river",noun
+samudra,"ocean, sea",noun
+vana,"forest",noun
+vriksha,"tree",noun
+pushpa,"flower",noun
+phala,"fruit, result",noun
+bija,"seed",noun
+anna,"food, grain",noun
+ksira,"milk",noun
+madhu,"honey, sweet",noun
+grama,"village",noun
+nagara,"city",noun
+griha,"house, home",noun
+mandira,"temple",noun
+raja,"king",noun
+rajan,"king",noun
+mantrin,"minister, counsellor",noun
+sena,"army",noun
+yuddha,"war, battle",noun
+shastra,"weapon",noun
+ratha,"chariot",noun
+ashva,"horse",noun
+gaja,"elephant",noun
+go,"cow",noun
+simha,"lion",noun
+vyaghra,"tiger",noun
+sarpa,"snake, serpent",noun
+mrga,"deer, animal",noun
+pakshin,"bird",noun
+matsya,"fish",noun
+manushya,"human being, man",noun
+nara,"man",noun
+nari,"woman",noun
+putra,"son",noun
+putri,"daughter",noun
+mata,"mother",noun
+pita,"father",noun
+bhrata,"brother",noun
+mitra,"friend",noun
+shatru,"enemy",noun
+atman,"self, soul",noun
+manas,"mind",noun
+buddhi,"intellect, wisdom",noun
+hridaya,"heart",noun
+shira,"head",noun
+hasta,"hand",noun
+pada,"foot, step",noun
+netra,"eye",noun
+karna,"ear",noun
+mukha,"mouth, face",noun
+jihva,"tongue",noun
+shariira,"body",noun
+prana,"breath, life-force",noun
+jivana,"life",noun
+mrityu,"death",noun
+kala,"time",noun
+divasa,"day",noun
+ratri,"night",noun
+varsha,"year, rain",noun
+masa,"month",noun
+satya,"truth",noun
+asatya,"falsehood",noun
+jnana,"knowledge",noun
+vidya,"learning, knowledge",noun
+shanti,"peace",noun
+sukha,"happiness",noun
+duhkha,"suffering, sorrow",noun
+prema,"love",noun
+bhaya,"fear",noun
+krodha,"anger",noun
+lobha,"greed",noun
+moha,"delusion",noun
+ananda,"bliss, joy",noun
+shakti,"power, energy",noun
+bala,"strength",noun
+tejas,"radiance, splendour",noun
+dhana,"wealth",noun
+artha,"wealth, meaning, purpose",noun
+kama,"desire",noun
+moksha,"liberation",noun
+svarga,"heaven",noun
+naraka,"hell",noun
+gam,"to go",verb
+gaccha,"goes",verb
+agacchat,"went",verb
+bhu,"to be, to become",verb
+bhavati,"becomes, is",verb
+as,"to be",verb
+asti,"is",verb
+kr,"to do, to make",verb
+karoti,"does, makes",verb
+vad,"to speak",verb
+vadati,"speaks",verb
+pash,"to see",verb
+pashyati,"sees",verb
+shru,"to hear",verb
+shrnoti,"hears",verb
+jna,"to know",verb
+janati,"knows",verb
+da,"to give",verb
+dadati,"gives",verb
+labh,"to obtain",verb
+labhate,"obtains",verb
+khad,"to eat",verb
+khadati,"eats",verb
+pa,"to drink",verb
+pibati,"drinks",verb
+sthaa,"to stand",verb
+tishthati,"stands",verb
+nam,"to bow",verb
+namati,"bows",verb
+smr,"to remember",verb
+smarati,"remembers",verb
+likh,"to write",verb
+likhati,"writes",verb
+path,"to read, recite",verb
+pathati,"reads",verb
+mahat,"great, large",adjective
+alpa,"small, little",adjective
+uchcha,"high, tall",adjective
+nicha,"low",adjective
+dirgha,"long",adjective
+hrasva,"short",adjective
+nava,"new",adjective
+purana,"old, ancient",adjective
+shubha,"auspicious, good",adjective
+ashubha,"inauspicious",adjective
+sundara,"beautiful",adjective
+kruura,"cruel",adjective
+priya,"dear, beloved",adjective
+shukla,"white, bright",adjective
+krishna,"black, dark",adjective
+rakta,"red",adjective
+pita,"yellow",adjective
+nila,"blue",adjective
+harita,"green",adjective
+purna,"full, complete",adjective
+rikta,"empty",adjective
+shanta,"calm, peaceful",adjective
+ugra,"fierce",adjective
+viira,"brave, heroic",adjective
+buddha,"awakened, enlightened",adjective
+mukta,"freed, liberated",adjective
+sarva,"all, whole",adjective
+eka,"one",adjective
+dvi,"two",adjective
+tri,"three",adjective
+shata,"hundred",adjective
+sahasra,"thousand",adjective
+adya,"today",adverb
+shvas,"tomorrow",adverb
+hyas,"yesterday",adverb
+idanim,"now",adverb
+tada,"then",adverb
+yada,"when",adverb
+sada,"always",adverb
+kadachit,"sometimes",adverb
+atra,"here",adverb
+tatra,"there",adverb
+kutra,"where",adverb
+sarvatra,"everywhere",adverb
+evam,"thus, in this way",adverb
+katham,"how",adverb
+kasmat,"why",adverb
+aham,"I",pronoun
+tvam,"you",pronoun
+sah,"he",pronoun
+saa,"she",pronoun
+tat,"it, that",pronoun
+vayam,"we",pronoun
+yuyam,"you (plural)",pronoun
+te,"they",pronoun
+ayam,"this",pronoun
+kah,"who",pronoun
+kim,"what",pronoun
+ca,"and",indeclinable
+va,"or",indeclinable
+na,"not, no",indeclinable
+api,"also, even",indeclinable
+iva,"like, as if",indeclinable
+eva,"only, indeed",indeclinable
+hi,"because, indeed",indeclinable
+tu,"but",indeclinable
+atha,"now, then",indeclinable
+iti,"thus (quotation marker)",indeclinable
+saha,"with, together",indeclinable
+vina,"without",indeclinable
+punar,"again",indeclinable
+prati,"towards, each",indeclinable
+namah,"salutation, homage",indeclinable
