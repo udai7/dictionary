@@ -1,12 +1,13 @@
-Held-out accuracy: 0.8151
+Held-out accuracy: 0.8369
 
               precision    recall  f1-score   support
 
-   adjective       0.67      0.79      0.72      9710
-indeclinable       0.73      0.84      0.78      1034
-        noun       0.90      0.82      0.86     22583
+   adjective       0.78      0.70      0.74     10935
+indeclinable       0.96      0.78      0.86      1029
+        noun       0.86      0.91      0.88     22535
+        verb       0.88      0.69      0.78       166
 
-    accuracy                           0.82     33327
-   macro avg       0.77      0.82      0.79     33327
-weighted avg       0.83      0.82      0.82     33327
+    accuracy                           0.84     34665
+   macro avg       0.87      0.77      0.81     34665
+weighted avg       0.83      0.84      0.83     34665
 

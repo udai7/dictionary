@@ -53,8 +53,8 @@ mean "noun", others "adjective", etc.).
 Technical pipeline (all `scikit-learn`):
 
 ```
-word  →  character n-gram features  →  Logistic Regression  →  POS + confidence
-         (TfidfVectorizer, 2–4 char,        (classifier)
+word  →  character n-gram features  →  calibrated LinearSVC  →  POS + confidence
+         (TfidfVectorizer, 2–6 char,        (classifier)
           respects word boundaries)
 ```
 
@@ -89,7 +89,7 @@ trade-off clearly.
 
 ## 5. Results
 
-- **Held-out accuracy ≈ 81%** across the 3 part-of-speech classes.
+- **Held-out accuracy ≈ 84%** across the 4 part-of-speech classes.
 - Training takes about **45 seconds** on a normal laptop.
 - Examples of the 90% confidence rule in action:
 
@@ -132,7 +132,6 @@ streamlit run app.py         # run the app
   dictionary text into ML-ready features, using prediction *probabilities* as a
   confidence threshold, and building a UI.
 - **Possible extensions:**
-  - add a separate **verb** class from a verb-root source,
   - accept **Devanagari** script (देव) as well as Roman letters,
   - add **fuzzy matching** so misspelled inputs still get answers,
   - try other models (Random Forest, small neural net) and compare accuracy.
@@ -143,7 +142,7 @@ streamlit run app.py         # run the app
 
 > "I took the full Monier-Williams Sanskrit dictionary — about 175,000 words —
 > parsed and cleaned it into a dataset, and trained a scikit-learn classifier
-> that predicts a word's part of speech from its spelling, with about 81%
+> that predicts a word's part of speech from its spelling, with about 84%
 > accuracy. The app looks up the English meaning and shows the predicted part
 > of speech only when the model is over 90% confident. I kept translation as a
 > lookup on purpose, because real translation needs a neural network and far

@@ -10,7 +10,7 @@ exceeds **90%**.
 | Output | How it's produced |
 |---|---|
 | English translation | **Lookup** in the dictionary table. True translation needs a neural seq2seq model and far more data, so this is a lookup, not a prediction. |
-| Part of speech | **Trained ML model** — a scikit-learn classifier over character n-grams (`TfidfVectorizer(char_wb, 2–4)` → `LogisticRegression`). Produces a real `predict_proba` confidence that is thresholded at 90%. |
+| Part of speech | **Trained ML model** — a scikit-learn classifier over character n-grams (`TfidfVectorizer(char_wb, 2–6)` → calibrated `LinearSVC`). Produces a real `predict_proba` confidence that is thresholded at 90%. |
 
 This works because Sanskrit morphology is regular: endings strongly signal the
 grammatical category (noun / adjective / indeclinable).
@@ -50,15 +50,17 @@ streamlit run app.py         # launch the UI
 
 ## Current results
 
-Held-out accuracy ≈ **81%** across 3 POS classes on ~167k unique words.
-Most confident predictions (verbs-by-ending, clear noun/adjective suffixes)
-land well above the 90% confidence threshold.
+Held-out accuracy ≈ **84%** across 4 POS classes (noun, adjective, verb,
+indeclinable) on ~173k unique words. Most confident predictions (clear
+noun/adjective suffixes, indeclinables, verb roots) land well above the 90%
+confidence threshold. The main residual error is the genuine noun↔adjective
+ambiguity — many Sanskrit words are both, with identical spelling.
 
 ## Notes / possible extensions
 
-- The dataset has no separate **verb** class (MW marks verb roots differently),
-  so verb forms are classified by spelling into the available classes. Adding a
-  verb-root source would extend this.
+- Verb **roots** are now extracted from MW (entries marked with a conjugation
+  class, e.g. `gam` → "to go, move"). Inflected verb forms like `gacchati` are
+  not separate headwords in MW, so they are still classified by spelling.
 - Some glosses retain MW grammatical notes; you can clean them further in
   `build_mw_dataset.py:clean_english`.
 - To add fuzzy matching for misspellings, the app already suggests close words

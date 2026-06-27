@@ -2,15 +2,14 @@
 Train the part-of-speech classifier on Sanskrit headwords.
 
 What is actually "learned":
-    The model predicts the part of speech (noun / verb / adjective / adverb /
-    pronoun / indeclinable) from the *spelling* of a romanized Sanskrit word.
-    This works because Sanskrit morphology is highly regular -- endings like
-    -ati, -ana, -tva, -in, etc. strongly signal the grammatical category.
+    The model predicts the part of speech (noun / adjective / verb /
+    indeclinable) from the *spelling* of a romanized Sanskrit word. This works
+    because Sanskrit morphology is highly regular -- endings like -ati, -ana,
+    -tva, -in, etc. strongly signal the grammatical category.
 
-    We use character n-gram features (TF-IDF over 2-4 char sequences, including
-    word boundaries) feeding a calibrated Logistic Regression classifier.
-    `predict_proba` gives a genuine confidence score, which the Streamlit app
-    thresholds at 90%.
+    We use character n-gram features (TF-IDF over 2-6 char sequences, including
+    word boundaries) feeding a calibrated linear SVM. `predict_proba` gives a
+    genuine confidence score, which the Streamlit app thresholds at 90%.
 
 The English *translation* is NOT learned -- true translation needs a neural
 sequence model and far more data. Instead we save the dictionary as a lookup
@@ -26,7 +25,8 @@ import os
 import joblib
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.linear_model import LogisticRegression
+from sklearn.svm import LinearSVC
+from sklearn.calibration import CalibratedClassifierCV
 from sklearn.model_selection import train_test_split
 from sklearn.pipeline import Pipeline
 from sklearn.metrics import classification_report, accuracy_score
@@ -53,13 +53,16 @@ def build_model() -> Pipeline:
     return Pipeline([
         ("features", TfidfVectorizer(
             analyzer="char_wb",   # character n-grams, respecting word boundaries
-            ngram_range=(2, 4),
-            min_df=1,
+            ngram_range=(2, 6),   # up to 6 chars captures long Sanskrit suffixes
+            min_df=2,             # ignore ngrams seen only once (noise)
+            sublinear_tf=True,    # damp the effect of very frequent ngrams
         )),
-        ("clf", LogisticRegression(
-            max_iter=2000,
-            C=4.0,
-            class_weight="balanced",   # helps rarer POS classes
+        # A linear SVM separates these char-ngram features better than logistic
+        # regression; CalibratedClassifierCV wraps it so we still get the
+        # genuine predict_proba confidence the app thresholds at 90%.
+        ("clf", CalibratedClassifierCV(
+            LinearSVC(C=1.0, class_weight="balanced"),  # balanced helps rare POS
+            cv=3,
         )),
     ])
 
